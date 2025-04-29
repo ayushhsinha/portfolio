@@ -102,17 +102,7 @@ export default function Portfolio() {
     e.target.reset(); // optional: clear form after submit
   };
 
-  //  // Handle resume download
-  //  const handleResumeDownload = () => {
-  //   // Create a direct link to the resume file
-  //   const link = document.createElement('a');
-  //   link.href = process.env.PUBLIC_URL + '/Ayush_Sinha_Resume.pdf';
-  //   link.download = 'Ayush_Sinha_Resume.pdf';
-  //   link.target = '_blank';
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
+  
 
   // Handle resume download
   const handleResumeDownload = () => {
@@ -148,7 +138,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text animate-pulse">Ayush Sinha</h1>
           <nav className="hidden md:flex space-x-6">
-            {['about', 'skills', 'projects', 'experience', 'education', 'contact'].map((section) => (
+            {['about', 'education', 'skills', 'projects', 'experience', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
