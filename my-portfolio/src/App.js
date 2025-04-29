@@ -102,6 +102,45 @@ export default function Portfolio() {
     e.target.reset(); // optional: clear form after submit
   };
 
+  //  // Handle resume download
+  //  const handleResumeDownload = () => {
+  //   // Create a direct link to the resume file
+  //   const link = document.createElement('a');
+  //   link.href = process.env.PUBLIC_URL + '/Ayush_Sinha_Resume.pdf';
+  //   link.download = 'Ayush_Sinha_Resume.pdf';
+  //   link.target = '_blank';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  // Handle resume download
+  const handleResumeDownload = () => {
+    // console.log("Resume download button clicked");
+    // alert("Download button clicked");
+    try{
+      // Check if process.env.PUBLIC_URL is defined
+      // console.log("PUBLIC_URL:", process.env.PUBLIC_URL);
+      
+      // Try a direct path approach instead
+      const resumePath = '/Ayush_Sinha_Resume.pdf';
+      // console.log("Attempting to download from:", resumePath);
+      
+      // Create a direct link to the resume file
+      const link = document.createElement('a');
+      link.href = resumePath;
+      link.download = 'Ayush_Sinha_Resume.pdf';
+      link.target = '_blank'; // Try opening in new tab if download doesn't work
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Failed to download resume:", error);
+      alert("There was an issue downloading the resume. Please try again later.");
+    }
+  
+  };
+
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       {/* Header */}
@@ -153,13 +192,13 @@ export default function Portfolio() {
             <p className="max-w-2xl mx-auto animate-fade-in">
               Full-stack developer skilled in building scalable software. Passionate about integrating AI and machine learning to create innovative solutions and drive technological advancements.
             </p>
-            <a 
-              href="Ayush_Sinha_Resume.pdf"
-              download
-              className="mt-8 inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-full font-medium shadow-lg hover:bg-blue-50 transition-all duration-300 "
+            <button 
+              onClick={handleResumeDownload}
+              className="mt-8 inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-full font-medium shadow-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer"
+              style={{zIndex: 100, position: 'relative'}}
             >
               <Download size={18} className="mr-2" /> Download Resume
-            </a>
+            </button>
 
             {/* Background animation elements */}
             <div className="absolute top-0 left-0 w-full h-full">
