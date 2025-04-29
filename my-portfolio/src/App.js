@@ -84,7 +84,7 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold mb-8 text-center">Technical Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <SkillCard title="Languages" skills={['Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS']} />
-              <SkillCard title="Web Development" skills={['Angular JS', 'Node.js', 'Elysia.js', 'Bun']} />
+              <SkillCard title="Web Development" skills={['Angular.js', 'React.js','Node.js','Material-UI', 'Elysia.js', 'Bun']} />
               <SkillCard title="Database Management" skills={['PostgreSQL']} />
               <SkillCard title="Developer Tools" skills={['VS Code', 'Git', 'Docker', 'NPM', 'GitHub']} />
               <SkillCard title="Technologies/Frameworks" skills={['Docker', 'Linux', 'Git', 'AWS']} />
@@ -124,11 +124,11 @@ export default function Portfolio() {
                   title="Student Housing Booking Website"
                   technologies="Angular, Node.js, Elysia.js, Bun, Docker, PostgreSQL"
                   description={[
-                    "Developed an interactive student housing booking website using Angular for the frontend and Node.js with Docker for the backend, ensuring scalability and security.",
-                    "Implemented features like secure login and detailed property listings with filters for location, price, and room specifications.",
-                    "Enabled users to view amenities and check availability, allowing for seamless booking of accommodations.",
-                    "Applied Agile methodologies to ensure timely feature delivery, conducting regular sprints and team retrospectives.",
-                    "Achieved 100% code coverage by developing 68 front-end tests and 76 back-end tests, significantly enhancing the system's robustness and reliability."
+                    "Built a dynamic housing booking platform with real-time property search filters for location, pricing, and room types.",
+                    "Improved search efficiency by 25% through dynamic filtering.",
+                    "Reduced server startup time by 60% with Bun runtime and Docker containerization.",
+                    "Achieved 100% test coverage with 144+ automated tests to ensure full reliability.",
+                    "Focused on scalable design and fast deployment."
                   ]}
                 />
               )}
@@ -136,20 +136,22 @@ export default function Portfolio() {
                 <>
                   <ProjectCard
                     title="Traffic Intersection Surveillance"
-                    technologies="Python, C++"
+                    technologies="Python, C++, Graph Theory, Algorithms"
                     description={[
-                      "Developed a system to enhance operational efficiency for local police departments by optimizing the placement of security cameras at high-traffic intersections, leading to improved resource allocation.",
-                      "Leveraged advanced computational techniques to solve the Vertex Cover problem, minimizing the number of cameras required while ensuring comprehensive intersection monitoring.",
-                      "Ensured safety and security by implementing robust monitoring solutions, significantly enhancing situational awareness for local authorities."
+                      "Designed an optimization tool to help law enforcement place cameras across city intersections efficiently.",
+                      "Reduced hardware requirements by 40% using advanced graph algorithms.",
+                      "Ensured full surveillance coverage with minimal camera overlap.",
+                      "Applied graph theory solutions to real-world infrastructure challenges."
                     ]}
                   />
                   <ProjectCard
                     title="Extending Wlang with Functions"
                     technologies="Python, TatSu"
                     description={[
-                      "Enhanced the Wlang symbolic execution engine by integrating function declarations and specifications, inspired by Dafny, improving the language's expressiveness and usability.",
-                      "Implemented requires and ensures clauses for formal verification of preconditions and postconditions, increasing the reliability of code execution.",
-                      "Updated the parser and Abstract Syntax Tree (AST) to support new function syntax, ensuring comprehensive test coverage and significantly improving code reliability and maintainability."
+                      "Enhanced Wlang’s symbolic execution engine by introducing formal function specifications ('requires'/'ensures' clauses).",
+                      "Achieved 1☺00% test coverage across parser and execution modules.",
+                      "Improved software reliability by reducing assertion failures.",
+                      "Aligned symbolic execution with modern formal verification practices (inspired by Dafny)."
                     ]}
                   />
                 </>
@@ -202,10 +204,10 @@ export default function Portfolio() {
               <a href="tel:+15485772138" className="flex items-center hover:text-blue-400 transition-colors">
                 <Phone className="mr-2" /> Phone
               </a>
-              <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
+              <a href="https://www.linkedin.com/in/ayushh-sinha" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
                 <Linkedin className="mr-2" /> LinkedIn
               </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
+              <a href="https://github.com/ayushhsinha" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
                 <Github className="mr-2" /> GitHub
               </a>
             </div>
@@ -252,10 +254,18 @@ function ProjectCard({ title, technologies, description }) {
     <div className="bg-gray-800 rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
       <h3 className="text-2xl font-semibold mb-2">{title}</h3>
       <p className="text-blue-400 mb-4">{technologies}</p>
+       {/* Render the first item as a paragraph */}
+       <p className="text-gray-300 mb-4">{description[0]}</p>
+
+      {/* Render the rest as bullet points */}
       <ul className="list-disc list-inside space-y-2">
+        {description.slice(1).map((item, index) => (
+          <li key={index} className="text-gray-300">{item}</li>
+        ))}
+      {/* <ul className="list-disc list-inside space-y-2">
         {description.map((item, index) => (
           <li key={index}>{item}</li>
-        ))}
+        ))} */}
       </ul>
     </div>
   )
