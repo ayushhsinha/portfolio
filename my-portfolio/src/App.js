@@ -255,17 +255,17 @@ function ProjectCard({ title, technologies, description }) {
       <h3 className="text-2xl font-semibold mb-2">{title}</h3>
       <p className="text-blue-400 mb-4">{technologies}</p>
        {/* Render the first item as a paragraph */}
-       <p className="text-gray-300 mb-4">{description[0]}</p>
+       {/* <p className="text-gray-300 mb-4">{description[0]}</p> */}
 
       {/* Render the rest as bullet points */}
-      <ul className="list-disc list-inside space-y-2">
+      {/* <ul className="list-disc list-inside space-y-2">
         {description.slice(1).map((item, index) => (
           <li key={index} className="text-gray-300">{item}</li>
-        ))}
-      {/* <ul className="list-disc list-inside space-y-2">
+        ))} */}
+      <ul className="list-disc list-inside space-y-2">
         {description.map((item, index) => (
           <li key={index}>{item}</li>
-        ))} */}
+        ))}
       </ul>
     </div>
   )
