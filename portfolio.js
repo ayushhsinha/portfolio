@@ -84,11 +84,12 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold mb-8 text-center">Technical Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <SkillCard title="Languages" skills={['Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS']} />
-              <SkillCard title="Web Development" skills={['Angular JS', 'Node.js', 'Elysia.js', 'Bun']} />
+              <SkillCard title="Web Development" skills={['Angular.js', 'React.js','Node.js','Material-UI', 'Elysia.js', 'Bun']} />
               <SkillCard title="Database Management" skills={['PostgreSQL']} />
               <SkillCard title="Developer Tools" skills={['VS Code', 'Git', 'Docker', 'NPM', 'GitHub']} />
               <SkillCard title="Technologies/Frameworks" skills={['Docker', 'Linux', 'Git', 'AWS']} />
               <SkillCard title="Project Management" skills={['Agile', 'Scrum', 'Kanban']} />
+              <SkillCard title="Libraries" skills={['Pandas', 'NumPy', 'Matplotlib', 'TensorFlow', 'PyTorch', 'Scikit-Learn']} />
             </div>
           </div>
         </section>

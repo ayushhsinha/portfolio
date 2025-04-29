@@ -89,6 +89,7 @@ export default function Portfolio() {
               <SkillCard title="Developer Tools" skills={['VS Code', 'Git', 'Docker', 'NPM', 'GitHub']} />
               <SkillCard title="Technologies/Frameworks" skills={['Docker', 'Linux', 'Git', 'AWS']} />
               <SkillCard title="Project Management" skills={['Agile', 'Scrum', 'Kanban']} />
+              <SkillCard title="Libraries" skills={['Pandas', 'NumPy', 'Matplotlib', 'TensorFlow', 'PyTorch', 'Scikit-Learn']} />
             </div>
           </div>
         </section>
