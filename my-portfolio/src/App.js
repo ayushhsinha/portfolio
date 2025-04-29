@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, Github, Linkedin, Mail, Phone, ChevronUp, Download } from 'lucide-react'
+import emailjs from 'emailjs-com';
+
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -76,6 +78,29 @@ export default function Portfolio() {
     }
     setIsMenuOpen(false)
   }
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_ivkyoc5',       // Replace with your EmailJS Service ID
+      'template_hih29wy',      // Replace with your Template ID
+      form.current,
+      'GVw9fxuVf1-O1rZ-x'        // Replace with your Public Key
+    ).then(
+      (result) => {
+        console.log(result.text);
+        alert("Message sent successfully!");
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Failed to send message. Please try again.");
+      }
+    );
+
+    e.target.reset(); // optional: clear form after submit
+  };
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">
@@ -329,19 +354,38 @@ export default function Portfolio() {
               </a>
             </div>
             
-            {/* Contact Form */}
+           {/* Contact Form */}
             <div className="mt-12 max-w-md mx-auto">
-              <form className="space-y-4">
+              <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div>
-                  <input type="text" placeholder="Your Name" className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                  <input
+                    type="text"
+                    name="from_name"
+                    placeholder="Your Name"
+                    required
+                    className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"/>
                 </div>
                 <div>
-                  <input type="email" placeholder="Your Email" className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                  <input
+                    type="email"
+                    name="reply_to"
+                    placeholder="Your Email"
+                    required
+                    className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"/>
                 </div>
                 <div>
-                  <textarea placeholder="Your Message" rows="4" className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"></textarea>
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows="4"
+                    required
+                    className="w-full px-4 py-2 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"/>
                 </div>
-                <button type="submit" className="w-full py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">Send Message</button>
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
