@@ -245,12 +245,12 @@ export default function Portfolio() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <SkillCard title="Languages" skills={['Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS']} />
-              <SkillCard title="Web Development" skills={['Angular.js', 'React.js','Node.js','Material-UI', 'Elysia.js', 'Bun']} />
+              <SkillCard title="Web Development" skills={['Angular.js', 'React.js','Node.js','Material-UI', 'Elysia.js', 'Bun', 'Tailwind CSS', 'Express.js']} />
               <SkillCard title="Database Management" skills={['PostgreSQL']} />
-              <SkillCard title="Developer Tools" skills={['VS Code', 'Git', 'Docker', 'NPM', 'GitHub']} />
-              <SkillCard title="Technologies/Frameworks" skills={['Docker', 'Linux', 'Git', 'AWS']} />
-              <SkillCard title="Project Management" skills={['Agile', 'Scrum', 'Kanban']} />
+              <SkillCard title="Developer Tools" skills={['VS Code', 'Git', 'NPM', 'GitHub']} />
+              <SkillCard title="Technologies/Frameworks" skills={['Docker', 'Linux', 'AWS']} />
               <SkillCard title="Libraries" skills={['Pandas', 'NumPy', 'Matplotlib', 'TensorFlow', 'PyTorch', 'Scikit-Learn']} />
+              <SkillCard title="Project Management" skills={['Agile', 'Scrum', 'Kanban']} />
             </div>
           </div>
         </section>
